@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="jumbotron">
+    <h1>ASP.NET application to copy files to Azure File share</h1>
+    <p class="lead">Choose file(s) and click upload to Azure File share. See web.config for Azure File share configuration </p>
+</div>
+
+<span>
+    <input type="file" name="myFile" multiple /> <br>
+    <input type="submit" value="Upload" />
+</span>
+}
+
+<h3>@ViewBag.Message</h3>
